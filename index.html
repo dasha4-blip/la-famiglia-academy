@@ -1,0 +1,972 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#0d2219">
+<title>LA FAMIGLIA ACADEMY</title>
+<meta name="description" content="База знаний команды LA FAMIGLIA">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230d2219'/%3E%3Ccircle cx='32' cy='32' r='22' fill='none' stroke='%23c4a668' stroke-width='1.6'/%3E%3Ctext x='32' y='40' text-anchor='middle' font-family='Georgia,serif' font-size='22' fill='%23c4a668'%3ELF%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --forest: #0d2219;
+  --forest-2: #112a20;
+  --emerald: #0f3a2c;
+  --emerald-2: #154a3a;
+  --gold: #c4a668;
+  --gold-2: #d9c495;
+  --gold-deep: #9a7d45;
+  --gold-line: rgba(196, 166, 104, .34);
+  --gold-faint: rgba(196, 166, 104, .12);
+  --ivory: #f5efe2;
+  --ivory-2: #ece3cf;
+  --paper-card: #fbf7ee;
+  --ink: #1c2220;
+  --ink-2: #4f5853;
+  --graphite: #1a1f1d;
+  --wine: #6e2d2d;
+  --serif: "Cormorant Garamond", "Cormorant", Georgia, "Times New Roman", serif;
+  --sans: "Manrope", "Segoe UI", system-ui, -apple-system, sans-serif;
+  --ease: cubic-bezier(.2, .7, .2, 1);
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+body {
+  margin: 0;
+  min-height: 100vh;
+  background:
+    radial-gradient(1100px 620px at 50% -12%, rgba(30, 92, 70, .55), transparent 70%),
+    radial-gradient(900px 500px at 100% 100%, rgba(8, 26, 19, .9), transparent 70%),
+    var(--forest);
+  background-attachment: fixed;
+  color: var(--ivory);
+  font-family: var(--sans);
+  font-size: 17px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+a { color: inherit; }
+::selection { background: rgba(196, 166, 104, .35); }
+:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; border-radius: 2px; }
+
+/* ===== Шапка ===== */
+.site-header {
+  position: sticky; top: 0; z-index: 20;
+  backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
+  background: rgba(13, 34, 25, .78);
+  border-bottom: 1px solid rgba(196, 166, 104, .16);
+}
+.site-header__inner {
+  max-width: 1180px; margin: 0 auto; height: 64px;
+  padding: 0 24px; display: flex; align-items: center; justify-content: space-between; gap: 16px;
+}
+.brand { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+.brand__mark { width: 36px; height: 36px; flex: none; }
+.brand__name { font-family: var(--serif); font-size: 20px; font-weight: 600; letter-spacing: .14em; line-height: 1; }
+.brand__sub { display: block; font-family: var(--sans); font-size: 9.5px; font-weight: 600; letter-spacing: .5em; color: var(--gold); margin-top: 5px; }
+.header-link {
+  font-size: 12px; font-weight: 600; letter-spacing: .2em; text-transform: uppercase; text-decoration: none;
+  color: var(--gold-2); padding: 10px 2px; border-bottom: 1px solid transparent; transition: border-color .3s, color .3s;
+}
+.header-link:hover { color: var(--ivory); border-color: var(--gold); }
+
+/* ===== Общие ===== */
+.wrap { max-width: 1180px; margin: 0 auto; padding-left: 24px; padding-right: 24px; }
+.eyebrow { font-size: 12px; font-weight: 600; letter-spacing: .32em; text-transform: uppercase; color: var(--gold); }
+.rule {
+  display: flex; align-items: center; gap: 14px; color: var(--gold);
+  width: min(320px, 70%); margin: 28px auto;
+}
+.rule::before, .rule::after { content: ""; flex: 1; height: 1px; background: linear-gradient(90deg, transparent, var(--gold-line), var(--gold)); }
+.rule::after { background: linear-gradient(90deg, var(--gold), var(--gold-line), transparent); }
+.rule i { width: 7px; height: 7px; border: 1px solid var(--gold); transform: rotate(45deg); flex: none; }
+.rule--left { margin: 26px 0; width: min(260px, 80%); }
+.rule--left::before { display: none; }
+
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+  min-height: 48px; padding: 12px 22px;
+  font-family: var(--sans); font-size: 13px; font-weight: 600; letter-spacing: .16em; text-transform: uppercase;
+  text-decoration: none; cursor: pointer; border-radius: 2px;
+  color: var(--gold-2); background: transparent; border: 1px solid var(--gold-line);
+  transition: background .35s var(--ease), border-color .35s, color .35s, transform .2s;
+}
+.btn:hover { border-color: var(--gold); color: var(--ivory); background: var(--gold-faint); }
+.btn:active { transform: scale(.98); }
+.btn svg { width: 16px; height: 16px; flex: none; }
+
+/* ===== Переходы ===== */
+#view { min-height: calc(100vh - 64px - 120px); }
+#view.is-entering { animation: viewIn .7s var(--ease) both; }
+#view.is-leaving { opacity: 0; transform: translateY(8px); transition: opacity .2s ease, transform .2s ease; }
+@keyframes viewIn { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: none; } }
+.stagger > * { animation: viewIn .8s var(--ease) both; animation-delay: calc(var(--i, 0) * 70ms + 120ms); }
+
+/* ===== Главная ===== */
+.hero { text-align: center; padding-top: 76px; padding-bottom: 30px; }
+.hero__crest { width: 76px; height: 76px; margin: 0 auto 26px; display: block; }
+.hero__title {
+  margin: 0; font-family: var(--serif); font-weight: 500; line-height: .95;
+  font-size: clamp(46px, 10.5vw, 112px); letter-spacing: .05em; color: var(--ivory);
+}
+.hero__academy {
+  display: block; margin-top: 18px; font-family: var(--sans); font-weight: 600;
+  font-size: clamp(12px, 1.6vw, 15px); letter-spacing: .72em; padding-left: .72em; color: var(--gold);
+}
+.hero__subtitle { margin: 0; font-family: var(--serif); font-style: italic; font-weight: 500; font-size: clamp(24px, 3.4vw, 32px); color: var(--gold-2); }
+.hero__intro { max-width: 540px; margin: 16px auto 0; color: rgba(245, 239, 226, .78); font-size: 17px; }
+
+.program { padding-top: 46px; padding-bottom: 96px; }
+.program__head { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; margin-bottom: 26px; padding-bottom: 16px; border-bottom: 1px solid rgba(196, 166, 104, .2); }
+.program__head h2 { margin: 0; font-family: var(--serif); font-weight: 500; font-size: clamp(26px, 3vw, 34px); }
+.program__head span { color: rgba(245, 239, 226, .55); font-size: 14px; }
+
+.cards { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; }
+.card {
+  position: relative; flex: 1 1 calc(33.333% - 20px); max-width: calc(33.333% - 13.4px); min-width: 280px;
+  display: flex; flex-direction: column; text-decoration: none; color: var(--ivory);
+  padding: 30px 28px 26px; min-height: 300px; border-radius: 3px; overflow: hidden;
+  background: linear-gradient(165deg, rgba(24, 78, 61, .62) 0%, rgba(14, 44, 33, .74) 55%, rgba(10, 32, 24, .85) 100%);
+  border: 1px solid rgba(196, 166, 104, .2);
+  box-shadow: 0 1px 0 rgba(255, 255, 255, .04) inset, 0 20px 50px rgba(0, 0, 0, .25);
+  transition: transform .45s var(--ease), border-color .45s, box-shadow .45s, background .45s;
+}
+.card::before {
+  content: ""; position: absolute; left: 28px; right: 28px; top: 0; height: 1px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  transform: scaleX(.25); opacity: .6; transition: transform .6s var(--ease), opacity .6s;
+}
+.card:hover { transform: translateY(-4px); border-color: rgba(196, 166, 104, .55); box-shadow: 0 1px 0 rgba(255, 255, 255, .05) inset, 0 30px 70px rgba(0, 0, 0, .38); }
+.card:hover::before { transform: scaleX(1); opacity: 1; }
+.card:active { transform: translateY(-1px) scale(.99); }
+.card__num { font-family: var(--serif); font-weight: 500; font-size: 58px; line-height: 1; color: var(--gold); letter-spacing: .02em; }
+.card__en { margin-top: 22px; font-size: 11.5px; font-weight: 600; letter-spacing: .26em; color: var(--gold-2); }
+.card__ru { margin: 8px 0 0; font-family: var(--serif); font-weight: 600; font-size: 29px; line-height: 1.15; }
+.card__desc { margin: 12px 0 0; font-size: 15px; line-height: 1.6; color: rgba(245, 239, 226, .7); }
+.card__go {
+  margin-top: auto; padding-top: 22px; display: flex; align-items: center; justify-content: space-between;
+  font-size: 11.5px; font-weight: 600; letter-spacing: .22em; text-transform: uppercase; color: var(--gold-2);
+}
+.card__go svg { width: 22px; height: 22px; transition: transform .45s var(--ease); }
+.card:hover .card__go svg { transform: translateX(6px); }
+
+/* ===== Страница раздела ===== */
+.chapter { position: relative; padding-top: 34px; padding-bottom: 44px; }
+.chapter__top { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 14px 20px; }
+.crumbs { font-size: 12px; font-weight: 600; letter-spacing: .22em; text-transform: uppercase; color: rgba(245, 239, 226, .55); }
+.crumbs a { color: var(--gold-2); text-decoration: none; }
+.crumbs a:hover { color: var(--ivory); }
+.crumbs span { margin: 0 8px; color: var(--gold-line); }
+.chapters { display: flex; gap: 6px; }
+.chapters a {
+  width: 40px; height: 40px; display: grid; place-items: center; text-decoration: none;
+  font-family: var(--serif); font-size: 18px; font-weight: 600; color: rgba(245, 239, 226, .55);
+  border: 1px solid rgba(196, 166, 104, .18); border-radius: 50%; transition: all .3s;
+}
+.chapters a:hover { color: var(--ivory); border-color: var(--gold); }
+.chapters a[aria-current="page"] { color: var(--forest); background: var(--gold); border-color: var(--gold); }
+.chapter__head { position: relative; margin-top: 54px; max-width: 860px; }
+.chapter__ghost {
+  position: absolute; right: -40px; top: -70px; z-index: -1; pointer-events: none; user-select: none;
+  font-family: var(--serif); font-weight: 600; font-size: clamp(160px, 26vw, 300px); line-height: 1;
+  color: rgba(196, 166, 104, .07);
+}
+.chapter__title { margin: 14px 0 0; font-family: var(--serif); font-weight: 500; font-size: clamp(40px, 7vw, 76px); line-height: 1.02; }
+.chapter__subtitle { margin: 16px 0 0; font-family: var(--serif); font-style: italic; font-size: clamp(21px, 2.6vw, 27px); color: var(--gold-2); }
+.chapter__actions { margin-top: 30px; }
+
+/* ===== Область чтения ===== */
+.paper {
+  position: relative; max-width: 860px; margin: 0 auto;
+  background: var(--ivory); color: var(--ink);
+  padding: clamp(26px, 5.5vw, 68px) clamp(20px, 6vw, 76px);
+  border-radius: 3px;
+  box-shadow: 0 40px 90px rgba(0, 0, 0, .38), 0 0 0 1px rgba(196, 166, 104, .25);
+}
+.paper::before {
+  content: ""; position: absolute; inset: 10px; pointer-events: none; border: 1px solid rgba(154, 125, 69, .22); border-radius: 2px;
+}
+.paper > :first-child { margin-top: 0; }
+.paper p { margin: 0 0 16px; }
+.paper strong { font-weight: 700; color: #14201b; }
+.paper a { color: var(--emerald-2); text-decoration-color: rgba(21, 74, 58, .4); text-underline-offset: 3px; }
+.lead { font-family: var(--serif); font-size: clamp(22px, 2.6vw, 26px); line-height: 1.45; color: #22302a; }
+.block { padding: 40px 0 8px; border-top: 1px solid rgba(154, 125, 69, .25); }
+.paper > .block:first-child, .paper > .lead + .block { border-top: 0; }
+.paper > .lead + .block { padding-top: 18px; }
+.block > :last-child { margin-bottom: 0; }
+.h2 { display: flex; align-items: baseline; gap: 16px; margin: 0 0 18px; font-family: var(--serif); font-weight: 600; font-size: clamp(27px, 3.4vw, 34px); line-height: 1.15; color: #14201b; }
+.h2 small { font-family: var(--sans); font-size: 13px; font-weight: 700; letter-spacing: .14em; color: var(--gold-deep); flex: none; }
+.h3 { margin: 28px 0 10px; font-family: var(--serif); font-weight: 600; font-size: 23px; line-height: 1.25; color: var(--emerald); }
+.list { list-style: none; margin: 0 0 18px; padding: 0; }
+.list li { position: relative; padding: 0 0 0 26px; margin: 0 0 10px; }
+.list li::before { content: ""; position: absolute; left: 4px; top: .7em; width: 6px; height: 6px; background: var(--gold-deep); transform: rotate(45deg); }
+
+.note {
+  margin: 22px 0; padding: 18px 22px; background: var(--ivory-2); border-left: 2px solid var(--gold-deep);
+  font-size: 16px; color: #2b332f;
+}
+.note b { display: block; margin-bottom: 4px; font-size: 11.5px; letter-spacing: .22em; text-transform: uppercase; color: var(--gold-deep); }
+.note--wine { border-left-color: var(--wine); background: #efe2d6; }
+.note--wine b { color: var(--wine); }
+
+/* Принцип LA FAMIGLIA */
+.principle {
+  position: relative; margin: 44px 0 6px; padding: 34px clamp(22px, 4vw, 44px) 32px;
+  background: linear-gradient(160deg, var(--emerald-2), var(--emerald) 55%, #0b2c21);
+  color: var(--ivory); border-radius: 2px; box-shadow: 0 20px 50px rgba(15, 58, 44, .3);
+}
+.principle::before { content: ""; position: absolute; inset: 8px; border: 1px solid var(--gold-line); pointer-events: none; }
+.principle__label { display: flex; align-items: center; gap: 12px; font-size: 11.5px; font-weight: 700; letter-spacing: .3em; text-transform: uppercase; color: var(--gold); }
+.principle__label svg { width: 22px; height: 22px; flex: none; }
+.principle p { margin: 14px 0 0; font-family: var(--serif); font-style: italic; font-size: clamp(21px, 2.5vw, 25px); line-height: 1.45; color: var(--ivory); }
+
+/* Термины */
+.terms { display: grid; grid-template-columns: 1fr; gap: 14px; margin: 6px 0 0; }
+.term {
+  padding: 22px 22px 20px; background: var(--paper-card); border: 1px solid rgba(154, 125, 69, .22); border-radius: 2px;
+  transition: border-color .35s, transform .35s var(--ease), box-shadow .35s;
+}
+.term:hover { border-color: rgba(154, 125, 69, .55); transform: translateY(-2px); box-shadow: 0 14px 30px rgba(60, 50, 20, .1); }
+.term dt { font-family: var(--serif); font-weight: 600; font-size: 23px; line-height: 1.2; color: var(--emerald); }
+.term dt span { display: block; margin-bottom: 6px; font-family: var(--sans); font-size: 11px; font-weight: 700; letter-spacing: .2em; color: var(--gold-deep); }
+.term dd { margin: 8px 0 0; font-size: 15.5px; line-height: 1.6; color: #333b37; }
+
+/* Сообщение */
+.message {
+  margin: 22px 0 8px; border-radius: 3px; overflow: hidden;
+  background: linear-gradient(160deg, var(--emerald-2), var(--emerald) 60%, #0c3125);
+  box-shadow: 0 22px 50px rgba(15, 58, 44, .28);
+}
+.message__bar { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 14px 18px; border-bottom: 1px solid rgba(196, 166, 104, .22); }
+.message__label { font-size: 11px; font-weight: 700; letter-spacing: .24em; text-transform: uppercase; color: var(--gold); }
+.copy {
+  display: inline-flex; align-items: center; gap: 8px; min-height: 40px; padding: 8px 14px; cursor: pointer;
+  font-family: var(--sans); font-size: 12px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase;
+  color: var(--forest); background: var(--gold); border: 0; border-radius: 2px; transition: background .3s, transform .2s;
+}
+.copy:hover { background: var(--gold-2); }
+.copy:active { transform: scale(.97); }
+.copy svg { width: 15px; height: 15px; }
+.message__body { padding: 22px 18px 24px; }
+.bubble {
+  margin: 0; max-width: 560px; padding: 16px 18px; white-space: pre-wrap; overflow-wrap: anywhere;
+  font-family: var(--sans); font-size: 16.5px; line-height: 1.6; color: var(--ivory);
+  background: rgba(255, 255, 255, .07); border: 1px solid rgba(255, 255, 255, .08); border-radius: 16px 16px 16px 4px;
+}
+
+/* Голосовые */
+.voices { display: flex; align-items: center; gap: 22px; margin: 22px 0; padding: 22px; background: var(--paper-card); border: 1px solid rgba(154, 125, 69, .22); }
+.voices__num { font-family: var(--serif); font-size: 72px; font-weight: 600; line-height: .9; color: var(--gold-deep); }
+.voices__text { font-family: var(--serif); font-size: 22px; line-height: 1.3; color: var(--emerald); }
+.voices__waves { display: flex; gap: 8px; margin-top: 10px; }
+.voices__waves span { display: inline-flex; align-items: center; gap: 3px; padding: 7px 11px; background: var(--emerald); border-radius: 20px; }
+.voices__waves i { display: block; width: 2px; background: var(--gold-2); border-radius: 1px; }
+
+/* Возражения: шаги */
+.steps { list-style: none; margin: 10px 0 0; padding: 0; counter-reset: step; }
+.steps > li { position: relative; padding: 0 0 26px 62px; counter-increment: step; }
+.steps > li::before {
+  content: counter(step); position: absolute; left: 0; top: -2px; width: 42px; height: 42px; display: grid; place-items: center;
+  font-family: var(--serif); font-size: 22px; font-weight: 600; color: var(--ivory); background: var(--emerald); border-radius: 50%;
+  box-shadow: 0 0 0 4px var(--ivory), 0 0 0 5px rgba(154, 125, 69, .45);
+}
+.steps > li::after { content: ""; position: absolute; left: 20.5px; top: 46px; bottom: 6px; width: 1px; background: rgba(154, 125, 69, .35); }
+.steps > li:last-child::after { display: none; }
+.steps h4 { margin: 4px 0 8px; font-family: var(--serif); font-size: 24px; font-weight: 600; color: #14201b; }
+.steps p { margin: 0 0 10px; }
+.say { display: block; margin: 8px 0; padding: 10px 16px; font-family: var(--serif); font-style: italic; font-size: 20px; line-height: 1.4; color: var(--emerald); background: var(--paper-card); border-left: 2px solid var(--gold); }
+.examples-label { font-size: 12px; font-weight: 700; letter-spacing: .2em; text-transform: uppercase; color: var(--gold-deep); }
+
+/* Возражения: разборы */
+.objection { margin: 22px 0 0; padding: 26px clamp(18px, 3.4vw, 32px) 10px; background: var(--paper-card); border: 1px solid rgba(154, 125, 69, .25); border-radius: 2px; }
+.objection h3 { position: relative; margin: 0 0 18px; padding-left: 34px; font-family: var(--serif); font-style: italic; font-weight: 600; font-size: 27px; line-height: 1.2; color: #14201b; }
+.objection h3::before { content: "\201C"; position: absolute; left: 0; top: -8px; font-size: 62px; line-height: 1; color: var(--gold); font-style: normal; }
+.objection dl { margin: 0; }
+.objection .row { display: grid; grid-template-columns: 1fr; gap: 2px; padding: 12px 0; border-top: 1px solid rgba(154, 125, 69, .2); }
+.objection dt { font-size: 11.5px; font-weight: 700; letter-spacing: .2em; text-transform: uppercase; color: var(--gold-deep); padding-top: 3px; }
+.objection dd { margin: 0; font-size: 16px; }
+.objection dd q { quotes: "«" "»"; font-family: var(--serif); font-style: italic; font-size: 19.5px; line-height: 1.4; color: var(--emerald); }
+
+/* Заявка: шаги и поля */
+.app-steps { display: grid; grid-template-columns: 1fr; gap: 12px; margin: 10px 0 0; }
+.app-step { display: grid; grid-template-columns: 74px 1fr; gap: 6px 16px; padding: 20px; background: var(--paper-card); border: 1px solid rgba(154, 125, 69, .22); border-radius: 2px; }
+.app-step__n { grid-row: span 2; font-family: var(--serif); font-size: 15px; font-weight: 600; color: var(--gold-deep); letter-spacing: .08em; text-transform: uppercase; line-height: 1.1; }
+.app-step__n b { display: block; font-size: 44px; line-height: .95; color: var(--emerald); }
+.app-step h4 { margin: 0; font-family: var(--serif); font-size: 23px; font-weight: 600; color: #14201b; line-height: 1.2; }
+.app-step p, .app-step ul { margin: 0; font-size: 16px; }
+.app-step .list { margin-top: 8px; }
+.app-step .list li { margin-bottom: 4px; }
+.app-step--extra { background: transparent; border-style: dashed; }
+.tag { display: inline-block; margin-left: 6px; padding: 2px 8px; font-family: var(--sans); font-size: 10.5px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; vertical-align: middle; color: var(--gold-deep); border: 1px solid rgba(154, 125, 69, .45); border-radius: 20px; }
+.fields { margin: 10px 0 0; border-top: 1px solid rgba(154, 125, 69, .3); }
+.fields .row { display: grid; grid-template-columns: 1fr; gap: 2px; padding: 13px 0; border-bottom: 1px solid rgba(154, 125, 69, .2); }
+.fields dt { font-family: var(--serif); font-size: 21px; font-weight: 600; color: var(--emerald); }
+.fields dd { margin: 0; font-size: 16px; color: #333b37; }
+.devices { display: grid; grid-template-columns: 1fr; gap: 12px; margin: 16px 0 18px; }
+.device { padding: 22px; background: var(--emerald); color: var(--ivory); border-radius: 2px; position: relative; }
+.device::before { content: ""; position: absolute; inset: 6px; border: 1px solid var(--gold-line); pointer-events: none; }
+.device span { font-size: 11px; font-weight: 700; letter-spacing: .24em; text-transform: uppercase; color: var(--gold); }
+.device b { display: block; margin-top: 6px; font-family: var(--serif); font-size: 28px; font-weight: 600; line-height: 1.15; }
+.checks { list-style: none; margin: 8px 0 18px; padding: 0; }
+.checks li { position: relative; padding: 12px 0 12px 40px; border-bottom: 1px solid rgba(154, 125, 69, .2); }
+.checks li::before {
+  content: ""; position: absolute; left: 0; top: 12px; width: 24px; height: 24px; border-radius: 50%;
+  background: var(--emerald) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23d9c495' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6.5 12.5l3.5 3.5 7.5-8'/%3E%3C/svg%3E") center / 16px no-repeat;
+}
+
+/* ===== Низ раздела ===== */
+.next-zone { max-width: 860px; margin: 36px auto 0; padding-bottom: 90px; }
+.continue {
+  position: relative; display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 20px;
+  padding: 30px clamp(22px, 4vw, 40px); text-decoration: none; color: var(--ivory); border-radius: 3px; overflow: hidden;
+  background: linear-gradient(160deg, rgba(28, 88, 68, .75), rgba(14, 44, 33, .85));
+  border: 1px solid rgba(196, 166, 104, .35);
+  transition: border-color .45s, transform .45s var(--ease), box-shadow .45s;
+}
+.continue:hover { border-color: var(--gold); transform: translateY(-3px); box-shadow: 0 26px 60px rgba(0, 0, 0, .35); }
+.continue__title { margin: 8px 0 0; font-family: var(--serif); font-size: clamp(28px, 4vw, 40px); font-weight: 500; line-height: 1.1; }
+.continue__meta { margin-top: 6px; font-size: 13px; letter-spacing: .2em; color: var(--gold-2); text-transform: uppercase; }
+.continue__arrow { width: 62px; height: 62px; display: grid; place-items: center; border: 1px solid var(--gold); border-radius: 50%; color: var(--gold); transition: background .4s, color .4s, transform .45s var(--ease); }
+.continue__arrow svg { width: 24px; height: 24px; }
+.continue:hover .continue__arrow { background: var(--gold); color: var(--forest); transform: translateX(4px); }
+.pager { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; margin-top: 16px; }
+.pager .btn { flex: 1 1 220px; }
+.pager .btn--next { justify-content: flex-end; }
+
+.site-footer { border-top: 1px solid rgba(196, 166, 104, .14); padding: 30px 0 40px; text-align: center; color: rgba(245, 239, 226, .45); font-size: 13px; letter-spacing: .08em; }
+.site-footer b { font-family: var(--serif); font-size: 16px; font-weight: 600; letter-spacing: .2em; color: var(--gold); }
+
+/* ===== Адаптив ===== */
+@media (min-width: 680px) {
+  .terms { grid-template-columns: 1fr 1fr; }
+  .objection .row, .fields .row { grid-template-columns: 170px 1fr; gap: 20px; }
+  .devices { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 980px) {
+  .card { flex-basis: calc(50% - 20px); max-width: calc(50% - 10px); }
+}
+@media (max-width: 640px) {
+  body { font-size: 16.5px; }
+  .wrap, .site-header__inner { padding-left: 16px; padding-right: 16px; }
+  .brand__name { font-size: 17px; }
+  .hero { padding-top: 54px; }
+  .card { flex-basis: 100%; max-width: 100%; min-width: 0; min-height: 0; padding: 26px 22px 22px; }
+  .card__num { font-size: 50px; }
+  .program__head { flex-direction: column; gap: 4px; }
+  .chapter__head { margin-top: 38px; }
+  .chapter__ghost { right: -10px; top: -46px; }
+  .chapters a { width: 38px; height: 38px; }
+  .paper { margin: 0 -4px; }
+  .paper::before { inset: 6px; }
+  .continue { grid-template-columns: 1fr; }
+  .continue__arrow { width: 52px; height: 52px; }
+  .voices { flex-direction: column; align-items: flex-start; gap: 10px; }
+  .app-step { grid-template-columns: 1fr; }
+  .app-step__n { grid-row: auto; display: flex; align-items: baseline; gap: 10px; }
+  .app-step__n b { display: inline; font-size: 30px; }
+  .steps > li { padding-left: 56px; }
+  .header-link { display: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="crest" viewBox="0 0 80 80">
+    <circle cx="40" cy="40" r="37" fill="none" stroke="currentColor" stroke-width="1.2"/>
+    <circle cx="40" cy="40" r="32" fill="none" stroke="currentColor" stroke-width=".6" opacity=".7"/>
+    <path d="M40 6.5l2 2-2 2-2-2z M40 69.5l2 2-2 2-2-2z" fill="currentColor"/>
+    <text x="40" y="48.5" text-anchor="middle" font-family="Cormorant Garamond, Georgia, serif" font-size="25" font-weight="600" letter-spacing="1" fill="currentColor">LF</text>
+  </symbol>
+  <symbol id="arrow" viewBox="0 0 24 24"><path d="M4 12h15m-6-6 6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="arrow-left" viewBox="0 0 24 24"><path d="M20 12H5m6-6-6 6 6 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="copy" viewBox="0 0 24 24"><rect x="8.5" y="8.5" width="11" height="11" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M15.5 5.5v-1A1.5 1.5 0 0 0 14 3H5.5A1.5 1.5 0 0 0 4 4.5V13a1.5 1.5 0 0 0 1.5 1.5h1" fill="none" stroke="currentColor" stroke-width="1.8"/></symbol>
+  <symbol id="check" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+</svg>
+
+<header class="site-header">
+  <div class="site-header__inner">
+    <a class="brand" href="#/" aria-label="LA FAMIGLIA ACADEMY — на главную">
+      <svg class="brand__mark" style="color:var(--gold)"><use href="#crest"/></svg>
+      <span><span class="brand__name">LA FAMIGLIA</span><span class="brand__sub">ACADEMY</span></span>
+    </a>
+    <a class="header-link" href="#/">Оглавление</a>
+  </div>
+</header>
+
+<main id="view" tabindex="-1"></main>
+
+<footer class="site-footer">
+  <div class="wrap"><b>LA FAMIGLIA</b><br>Academy · База знаний команды</div>
+</footer>
+
+<!-- ======================= РАЗДЕЛ 01 ======================= -->
+<template id="tpl-terminology">
+  <div class="block">
+    <dl class="terms stagger">
+      <div class="term" style="--i:0"><dt><span>01</span>Лид (Lead)</dt><dd>Потенциальный кандидат, с которым можно начать общение по поводу работы.</dd></div>
+      <div class="term" style="--i:1"><dt><span>02</span>Холодный трафик</dt><dd>Люди, которые не знакомы со сферой и ранее не сталкивались с таким форматом работы.</dd></div>
+      <div class="term" style="--i:2"><dt><span>03</span>Тёплый трафик</dt><dd>Люди, которые уже знакомы со сферой, интересовались работой или ранее взаимодействовали с командой.</dd></div>
+      <div class="term" style="--i:3"><dt><span>04</span>Реферал</dt><dd>Человек, которого ты самостоятельно привёл в команду. Ты знакомишь его с возможностью сотрудничества и помогаешь пройти первые этапы. Рефералы учитываются при оценке твоих результатов и могут влиять на получение выплат по правилам проекта.</dd></div>
+      <div class="term" style="--i:4"><dt><span>05</span>Касание</dt><dd>Одно взаимодействие с кандидатом: первое сообщение, повторное сообщение или напоминание.</dd></div>
+      <div class="term" style="--i:5"><dt><span>06</span>Прогрев</dt><dd>Постепенное знакомство кандидата с работой, условиями и форматом сотрудничества, ответы на его вопросы и помощь в принятии решения.</dd></div>
+      <div class="term" style="--i:6"><dt><span>07</span>Назначение на собеседование</dt><dd>Согласование с кандидатом даты и времени прохождения собеседования.</dd></div>
+      <div class="term" style="--i:7"><dt><span>08</span>Регистрация</dt><dd>Этап, на котором кандидат успешно прошёл собеседование и зарегистрирован в системе проекта.</dd></div>
+      <div class="term" style="--i:8"><dt><span>09</span>Первый результат</dt><dd>Выход модели на две смены. Это основной этап, по которому фиксируется первый результат кандидата.</dd></div>
+      <div class="term" style="--i:9"><dt><span>10</span>MAGNET | Скаут</dt><dd>Бот, в котором мы записываем кандидатов, фиксируем необходимую информацию и отслеживаем их продвижение по этапам.</dd></div>
+      <div class="term" style="--i:10"><dt><span>11</span>Follow-up</dt><dd>Повторное сообщение кандидату, если он не ответил или необходимо напомнить о договорённости.</dd></div>
+      <div class="term" style="--i:11"><dt><span>12</span>Воронка</dt><dd>Последовательность этапов, которые проходит кандидат: от первого касания до первого результата.</dd></div>
+    </dl>
+    <aside class="principle">
+      <div class="principle__label"><svg><use href="#crest"/></svg>Принцип LA FAMIGLIA</div>
+      <p>Фиксируй каждого кандидата в MAGNET | Скаут, отслеживай его продвижение и своевременно поддерживай связь. Наша задача — довести кандидата от первого касания до первого результата.</p>
+    </aside>
+  </div>
+</template>
+
+<!-- ======================= РАЗДЕЛ 02 ======================= -->
+<template id="tpl-candidate-management">
+  <section class="block">
+    <h2 class="h2"><small>01</small>Поиск кандидатов</h2>
+    <p>Используй разные источники трафика, не ограничивайся одним способом.</p>
+
+    <h3 class="h3">Холодный трафик</h3>
+    <p>Основной источник холодного трафика — TG-лиды, которые выдаёт команда через спам. Это люди, незнакомые со сферой и таким форматом работы.</p>
+
+    <h3 class="h3">Тёплый трафик</h3>
+    <p>Самостоятельно ищи потенциальных кандидатов через:</p>
+    <ul class="list">
+      <li>Приложения для знакомств: DaVinci, Twinby и другие платформы.</li>
+      <li>TikTok — находи девушек, которым может быть интересна работа.</li>
+      <li>Instagram — ищи потенциальных кандидатов через профили и социальные сети.</li>
+      <li>Личное окружение — знакомые, друзья и люди, которых ты уже знаешь.</li>
+    </ul>
+    <p>Начинай с собственного круга общения. У знакомых уже есть определённый уровень доверия к тебе, поэтому начать разговор и рассказать о возможности сотрудничества часто проще.</p>
+
+    <h3 class="h3">Внешний вид профиля</h3>
+    <p>Профиль должен выглядеть живым и вызывать доверие. Добавь подходящую фотографию, публикуй фото и истории, поддерживай регулярную активность.</p>
+    <p>Не допускай, чтобы профиль выглядел пустым, искусственным или недавно созданным. Информация и публикации должны выглядеть естественно.</p>
+    <div class="note"><b>Помни</b>Перед ответом кандидат может зайти на твою страницу. Профиль часто становится первым впечатлением о тебе.</div>
+  </section>
+
+  <section class="block">
+    <h2 class="h2"><small>02</small>Работа с заинтересованностью</h2>
+    <ul class="list">
+      <li>Выясняй, интересен ли человеку формат сотрудничества.</li>
+      <li>Понимай, что именно его заинтересовало.</li>
+      <li>Отвечай на вопросы и объясняй непонятные моменты.</li>
+      <li>Не перегружай информацией.</li>
+      <li>Поддерживай диалог, а не просто отправляй заготовленные сообщения.</li>
+      <li>Постепенно переходи к следующему этапу, если кандидат заинтересован.</li>
+    </ul>
+  </section>
+
+  <section class="block">
+    <h2 class="h2"><small>03</small>Правила общения с кандидатами</h2>
+    <ul class="list">
+      <li>Общайся дружелюбно и непринуждённо.</li>
+      <li>Пиши преимущественно с маленькой буквы.</li>
+      <li>Используй стикеры и эмодзи, чтобы общение было живым.</li>
+      <li>Избегай чрезмерно официальных формулировок.</li>
+      <li>Не дави и не заставляй человека принимать решение.</li>
+      <li>Не игнорируй вопросы.</li>
+      <li>Не предоставляй ложную информацию.</li>
+      <li>Уважай личные границы и решение кандидата.</li>
+      <li>Подстраивайся под стиль собеседника, сохраняя дружелюбный тон.</li>
+    </ul>
+    <aside class="principle">
+      <div class="principle__label"><svg><use href="#crest"/></svg>Главное</div>
+      <p>Кандидат должен чувствовать, что общается с реальным человеком, а не с ботом или менеджером, механически выполняющим скрипт.</p>
+    </aside>
+  </section>
+
+  <section class="block">
+    <h2 class="h2"><small>04</small>Повторные касания</h2>
+    <p>Если кандидат не отвечает, используй Follow-up.</p>
+    <ul class="list">
+      <li>Напоминай о себе ненавязчиво.</li>
+      <li>Меняй формулировки повторных сообщений.</li>
+      <li>Учитывай предыдущий диалог.</li>
+      <li>Не отправляй много сообщений подряд без необходимости.</li>
+      <li>Если кандидат отказался, не продолжай навязывать предложение.</li>
+    </ul>
+  </section>
+
+  <section class="block">
+    <h2 class="h2"><small>05</small>Сопровождение кандидата</h2>
+    <ul class="list">
+      <li>Поддерживай связь с заинтересованным кандидатом.</li>
+      <li>Помогай разобраться в следующих этапах.</li>
+      <li>Согласовывай дату и время собеседования.</li>
+      <li>Напоминай о договорённостях.</li>
+      <li>Уточняй результат собеседования.</li>
+      <li>Сопровождай кандидата на этапах регистрации и достижения первого результата.</li>
+    </ul>
+  </section>
+</template>
+
+<!-- ======================= РАЗДЕЛ 03 ======================= -->
+<template id="tpl-communication">
+  <section class="block">
+    <h2 class="h2"><small>01</small>Первое касание</h2>
+    <p>Первое сообщение должно привлечь внимание, кратко объяснить суть предложения и побудить кандидата ответить.</p>
+    <p>Используй утверждённый пример первого сообщения без изменений:</p>
+    <div class="message">
+      <div class="message__bar">
+        <span class="message__label">Первое сообщение</span>
+        <button class="copy" type="button" data-copy="first-message"><svg><use href="#copy"/></svg><span>Скопировать</span></button>
+      </div>
+      <div class="message__body">
+<pre class="bubble" id="first-message">приветик,выглядишь прекрасно😇
+увидела твой профиль и подумала что тебе может быть интересна работа, у нас девочки ведут живые трансляции просто общаются с людьми (без вебкама онлика и тд) работают из дома, график от 3-4 смен в неделю по 6 часов, за смену обычно выходит 4-6 тысяч
+
+От 18 лет
+
+если интересно - напиши расскажу подробнее, если нет то все ок🌸</pre>
+      </div>
+    </div>
+  </section>
+
+  <section class="block">
+    <h2 class="h2"><small>02</small>Работа с ответом</h2>
+    <p>После ответа кандидата поддерживай диалог, выясняй его интерес и переходи к презентации работы. Не отправляй всю информацию хаотично: отвечай на вопросы последовательно и учитывай реакцию человека.</p>
+  </section>
+
+  <section class="block">
+    <h2 class="h2"><small>03</small>Презентация работы</h2>
+    <div class="voices">
+      <div class="voices__num">4</div>
+      <div>
+        <div class="voices__text">голосовых сообщения после того, как кандидат заинтересовался</div>
+        <div class="voices__waves" aria-hidden="true">
+          <span><i style="height:6px"></i><i style="height:12px"></i><i style="height:8px"></i><i style="height:14px"></i><i style="height:5px"></i></span>
+          <span><i style="height:10px"></i><i style="height:6px"></i><i style="height:14px"></i><i style="height:9px"></i><i style="height:6px"></i></span>
+          <span><i style="height:7px"></i><i style="height:13px"></i><i style="height:5px"></i><i style="height:11px"></i><i style="height:8px"></i></span>
+          <span><i style="height:12px"></i><i style="height:7px"></i><i style="height:10px"></i><i style="height:5px"></i><i style="height:13px"></i></span>
+        </div>
+      </div>
+    </div>
+    <p>После того как кандидат заинтересовался, отправь ему четыре голосовых сообщения. В них подробно рассказывается о сфере, условиях работы, заработке и графике.</p>
+    <p>Задача агента — понятно презентовать работу, ответить на вопросы кандидата, развеять сомнения и сформировать доверие.</p>
+  </section>
+
+  <section class="block">
+    <h2 class="h2"><small>04</small>Скрипты и примеры переписок</h2>
+    <p>Все рабочие скрипты, варианты сообщений и примеры переписок собраны в нашей Telegram-группе для агентов под названием «Скрипты».</p>
+    <p>Используй её как дополнительный материал при общении с кандидатами и ориентируйся на готовые примеры.</p>
+  </section>
+
+  <section class="block">
+    <h2 class="h2"><small>05</small>Использование материалов команды</h2>
+    <p>У команды есть сайт и Telegram-канал. Используй их, чтобы предоставить кандидату дополнительную информацию о работе и помочь ему ознакомиться с предложением.</p>
+    <div class="note"><b>Ссылки</b>Актуальные ссылки на сайт и Telegram-канал команды можно получить у лидера.</div>
+  </section>
+
+  <section class="block">
+    <h2 class="h2"><small>06</small>Переход к собеседованию</h2>
+    <p>Когда кандидат ознакомился с информацией, получил ответы на вопросы и заинтересован в продолжении, предложи перейти к следующему этапу — собеседованию.</p>
+    <p>Согласуй удобные дату и время, зафиксируй договорённость и напомни о ней при необходимости.</p>
+  </section>
+</template>
+
+<!-- ======================= РАЗДЕЛ 04 ======================= -->
+<template id="tpl-objection-handling">
+  <p class="lead">Возражение — это не всегда отказ. Часто кандидат заинтересован в предложении, но у него остаются вопросы, сомнения или опасения.</p>
+  <p>Главная задача — понять причину сомнения, дать честный и понятный ответ и помочь кандидату разобраться в предложении. Не нужно спорить, давить или пытаться переубедить человека любой ценой.</p>
+
+  <section class="block">
+    <h2 class="h2"><small>01</small>Почему возникают возражения</h2>
+    <p>Основные причины:</p>
+    <ul class="list">
+      <li><strong>Недоверие</strong> — кандидат боится мошенничества или не уверен в надёжности предложения.</li>
+      <li><strong>Недостаток информации</strong> — не до конца понимает формат работы.</li>
+      <li><strong>Страх нового</strong> — раньше не сталкивался с такой сферой.</li>
+      <li><strong>Сомнения в заработке</strong> — не уверен, что сможет получать заявленный доход.</li>
+      <li><strong>Нехватка времени</strong> — переживает, что не получится совмещать работу с учёбой или другими делами.</li>
+      <li><strong>Неуверенность в себе</strong> — боится, что не справится.</li>
+    </ul>
+    <div class="note"><b>Важно</b>Не воспринимай каждое возражение как отказ. Сначала выясни, что именно беспокоит человека.</div>
+  </section>
+
+  <section class="block">
+    <h2 class="h2"><small>02</small>Техника обработки возражений</h2>
+    <p>Используй последовательность из пяти этапов.</p>
+    <ol class="steps">
+      <li>
+        <h4>Принятие возражения</h4>
+        <p>Покажи кандидату, что ты услышала его и понимаешь причину сомнения. Не спорь и не обесценивай его переживания.</p>
+        <span class="examples-label">Пример</span>
+        <span class="say">«да, понимаю, почему у тебя мог возникнуть такой вопрос».</span>
+      </li>
+      <li>
+        <h4>Уточняющий вопрос</h4>
+        <p>Выясни, что именно вызывает сомнение. Не пытайся сразу отвечать, пока не поняла настоящую причину.</p>
+        <span class="examples-label">Примеры</span>
+        <span class="say">«а что именно тебя смущает?»</span>
+        <span class="say">«ты больше переживаешь из-за формата работы или условий?»</span>
+        <span class="say">«правильно понимаю, что тебя останавливает именно этот момент?»</span>
+      </li>
+      <li>
+        <h4>Ответ на возражение</h4>
+        <p>Дай конкретный ответ на вопрос кандидата. Объясни ситуацию простыми словами, при необходимости используй информацию с сайта и материалы команды.</p>
+      </li>
+      <li>
+        <h4>Проверка понимания</h4>
+        <p>Уточни, удалось ли разобраться с сомнением.</p>
+        <span class="examples-label">Примеры</span>
+        <span class="say">«я ответила на твой вопрос?»</span>
+        <span class="say">«стало понятнее, как всё устроено?»</span>
+        <span class="say">«остались ещё какие-то вопросы?»</span>
+      </li>
+      <li>
+        <h4>Переход к следующему этапу</h4>
+        <p>Если кандидат получил ответы и по-прежнему заинтересован, предложи следующий шаг — например, назначить собеседование.</p>
+      </li>
+    </ol>
+    <div class="note"><b>Живой диалог</b>Не нужно механически проходить все этапы по скрипту. Поддерживай живой диалог и адаптируй ответы под конкретного человека.</div>
+  </section>
+
+  <section class="block">
+    <h2 class="h2"><small>03</small>Примеры обработки возражений</h2>
+
+    <article class="objection">
+      <h3>А это точно не обман?</h3>
+      <dl>
+        <div class="row"><dt>Принятие</dt><dd><q>понимаю, сейчас действительно важно проверять подобные предложения</q></dd></div>
+        <div class="row"><dt>Уточнение</dt><dd><q>а что именно вызывает у тебя недоверие?</q></dd></div>
+        <div class="row"><dt>Ответ</dt><dd><q>могу подробнее рассказать, как устроена работа, какие условия и как проходит сотрудничество. Также можешь ознакомиться с нашим сайтом и телеграм-каналом</q></dd></div>
+        <div class="row"><dt>Проверка</dt><dd><q>стало немного понятнее, как всё устроено?</q></dd></div>
+        <div class="row"><dt>Следующий шаг</dt><dd><q>если остались вопросы, можешь спокойно задать их, я всё объясню</q></dd></div>
+      </dl>
+    </article>
+
+    <article class="objection">
+      <h3>Я никогда таким не занималась</h3>
+      <dl>
+        <div class="row"><dt>Принятие</dt><dd><q>это совершенно нормально, не у всех есть опыт в этой сфере</q></dd></div>
+        <div class="row"><dt>Уточнение</dt><dd><q>ты переживаешь, что не сможешь разобраться в работе?</q></dd></div>
+        <div class="row"><dt>Ответ</dt><dd><q>могу рассказать, как проходит обучение и какая поддержка предоставляется на старте</q></dd></div>
+        <div class="row"><dt>Проверка</dt><dd><q>тебе стало понятнее, как начинается работа?</q></dd></div>
+        <div class="row"><dt>Следующий шаг</dt><dd><q>если тебе интересно, можем перейти к следующему этапу и подробнее всё обсудить на собеседовании</q></dd></div>
+      </dl>
+    </article>
+
+    <article class="objection">
+      <h3>Я подумаю</h3>
+      <dl>
+        <div class="row"><dt>Принятие</dt><dd><q>конечно, не торопись с решением</q></dd></div>
+        <div class="row"><dt>Уточнение</dt><dd><q>а есть что-то конкретное, в чём ты пока сомневаешься?</q></dd></div>
+        <div class="row"><dt>Ответ</dt><dd>Если кандидат называет причину, спокойно разбери её и предоставь необходимую информацию.</dd></div>
+        <div class="row"><dt>Проверка</dt><dd><q>получилось прояснить этот момент?</q></dd></div>
+        <div class="row"><dt>Следующий шаг</dt><dd><q>хорошо, тогда можешь спокойно всё обдумать. Если появятся вопросы, я буду на связи</q></dd></div>
+      </dl>
+    </article>
+
+    <article class="objection">
+      <h3>Я не уверена, что смогу столько зарабатывать</h3>
+      <dl>
+        <div class="row"><dt>Принятие</dt><dd><q>понимаю, хочется заранее понимать, на какой доход можно рассчитывать</q></dd></div>
+        <div class="row"><dt>Уточнение</dt><dd><q>ты сомневаешься из-за отсутствия опыта или не совсем понимаешь, от чего зависит заработок?</q></dd></div>
+        <div class="row"><dt>Ответ</dt><dd>Объясни, из чего складывается доход, от чего он зависит и какие результаты бывают у моделей. Не обещай конкретную сумму каждому кандидату.</dd></div>
+        <div class="row"><dt>Проверка</dt><dd><q>теперь понятнее, как формируется заработок?</q></dd></div>
+        <div class="row"><dt>Следующий шаг</dt><dd>Если кандидат заинтересован, предложи подробнее обсудить условия на собеседовании.</dd></div>
+      </dl>
+    </article>
+  </section>
+
+  <section class="block">
+    <h2 class="h2"><small>04</small>Основные правила</h2>
+    <ul class="list">
+      <li>Не перебивай кандидата.</li>
+      <li>Не спорь и не пытайся доказать, что он неправ.</li>
+      <li>Не отвечай шаблонно, не разобравшись в причине сомнения.</li>
+      <li>Не перегружай человека лишней информацией.</li>
+      <li>Не обещай того, что не можешь гарантировать.</li>
+      <li>Не скрывай особенности и реальные условия работы.</li>
+      <li>Используй сайт, Telegram-канал и другие материалы команды.</li>
+      <li>Уважай решение кандидата, даже если он отказался.</li>
+    </ul>
+    <aside class="principle">
+      <div class="principle__label"><svg><use href="#crest"/></svg>Главный принцип LA FAMIGLIA</div>
+      <p>Сначала услышь человека, затем пойми его сомнение и только после этого предлагай решение.</p>
+    </aside>
+  </section>
+</template>
+
+<!-- ======================= РАЗДЕЛ 05 ======================= -->
+<template id="tpl-magnet-application">
+  <section class="block">
+    <h2 class="h2"><small>01</small>Для чего нужна заявка</h2>
+    <p>MAGNET | Модельный Скаут — бот, в котором мы фиксируем информацию о кандидате, выбираем формат работы и передаём данные для дальнейшего рассмотрения.</p>
+    <p>Создавай заявку, когда кандидат заинтересован в работе и готов перейти к следующему этапу.</p>
+  </section>
+
+  <section class="block">
+    <h2 class="h2"><small>02</small>Как создать новую заявку</h2>
+    <div class="app-steps">
+      <div class="app-step">
+        <div class="app-step__n">Шаг <b>1</b></div>
+        <h4>Открой бота</h4>
+        <p>Перейди в <a href="https://t.me/magnet_scout_bot" target="_blank" rel="noopener">MAGNET | Модельный Скаут</a> и нажми «Новая заявка».</p>
+      </div>
+      <div class="app-step">
+        <div class="app-step__n">Шаг <b>2</b></div>
+        <h4>Выбери тип кандидата</h4>
+        <div>
+          <p>Бот спросит, кого записываем. Выбери подходящий вариант:</p>
+          <ul class="list"><li>Модель.</li><li>Оператор.</li></ul>
+        </div>
+      </div>
+      <div class="app-step">
+        <div class="app-step__n">Шаг <b>3</b></div>
+        <h4>Выбери формат работы</h4>
+        <ul class="list"><li>Онлайн — работа из дома.</li><li>Офлайн — работа в офисном формате, доступна только в Уфе.</li></ul>
+      </div>
+      <div class="app-step">
+        <div class="app-step__n">Шаг <b>4</b></div>
+        <h4>Заполни шаблон</h4>
+        <p>Бот предложит скопировать шаблон. Заполни все поля и отправь их одним сообщением.</p>
+      </div>
+      <div class="app-step app-step--extra">
+        <div class="app-step__n">Шаг <b>5</b></div>
+        <h4>Фото кандидата <span class="tag">в боте</span></h4>
+        <p>Для модели бот попросит прикрепить фото кандидата в полный рост.</p>
+      </div>
+      <div class="app-step app-step--extra">
+        <div class="app-step__n">Шаг <b>6</b></div>
+        <h4>Дата и время собеседования <span class="tag">в боте</span></h4>
+        <p>Выбери в календаре дату и время, о которых договорилась с кандидатом. Время московское, записать можно минимум за 3 часа.</p>
+      </div>
+      <div class="app-step app-step--extra">
+        <div class="app-step__n">Шаг <b>7</b></div>
+        <h4>Проверка и отправка <span class="tag">в боте</span></h4>
+        <p>Бот покажет заявку целиком. Проверь данные, отметь все пункты подтверждения и отправь. Для модели среди них — что ты познакомила кандидата с графиком: минимум 3–4 смены в неделю от 6 часов.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="block">
+    <h2 class="h2"><small>03</small>Какие данные необходимо указать</h2>
+    <dl class="fields">
+      <div class="row"><dt>Имя</dt><dd>Имя кандидата.</dd></div>
+      <div class="row"><dt>Возраст</dt><dd>Возраст или дата рождения в скобках.</dd></div>
+      <div class="row"><dt>Телефон</dt><dd>Актуальный номер телефона.</dd></div>
+      <div class="row"><dt>Telegram</dt><dd>Никнейм кандидата.</dd></div>
+      <div class="row"><dt>Модель телефона</dt><dd>Конкретная модель устройства.</dd></div>
+      <div class="row"><dt>Отдельная комната</dt><dd>Может ли кандидат обеспечить тишину во время трансляции.</dd></div>
+      <div class="row"><dt>Как представились</dt><dd>Компания, формат работы и сайт, которые были озвучены кандидату.</dd></div>
+      <div class="row"><dt>Какую вакансию озвучили</dt><dd>Какую именно вакансию и условия обсуждали.</dd></div>
+      <div class="row"><dt>Ваша должность и имя</dt><dd>Твои данные как агента.</dd></div>
+    </dl>
+    <div class="note"><b>Офлайн</b>Для офлайна бот не спрашивает модель телефона и отдельную комнату. Вместо них — поле «Что рассказали о работе».</div>
+  </section>
+
+  <section class="block">
+    <h2 class="h2"><small>04</small>Требования к устройству</h2>
+    <p>Перед созданием заявки уточни модель телефона кандидата.</p>
+    <div class="devices">
+      <div class="device"><span>iPhone</span><b>от iPhone 11</b></div>
+      <div class="device"><span>Android</span><b>модель 2023 года выпуска или новее</b></div>
+    </div>
+    <p>Год выпуска можно проверить в интернете по точной модели телефона. Не нужно отдельно спрашивать кандидата о годе выпуска устройства.</p>
+  </section>
+
+  <section class="block">
+    <h2 class="h2"><small>05</small>Что значит «отдельная комната»</h2>
+    <p>Это не обязательно отдельная комната в собственности или отдельное жильё. Важно, чтобы кандидат мог обеспечить тишину во время трансляции и чтобы ему никто не мешал работать.</p>
+    <p>Заранее уточни этот момент, чтобы информация в заявке соответствовала реальным условиям кандидата.</p>
+  </section>
+
+  <section class="block">
+    <h2 class="h2"><small>06</small>Проверка заявки перед отправкой</h2>
+    <p>Перед отправкой убедись, что:</p>
+    <ul class="checks">
+      <li>Кандидату исполнилось 18 лет.</li>
+      <li>Правильно выбраны тип кандидата и формат работы.</li>
+      <li>Устройство соответствует требованиям.</li>
+      <li>Уточнена возможность обеспечить тишину во время трансляции.</li>
+      <li>Все поля шаблона заполнены.</li>
+      <li>Информация о вакансии соответствует тому, что ты рассказала кандидату.</li>
+      <li>Данные отправляются одним сообщением.</li>
+    </ul>
+    <div class="note note--wine"><b>Стоп</b>Если кандидату нет 18 лет, в работе с ним необходимо остановиться и вежливо завершить разговор.</div>
+    <aside class="principle">
+      <div class="principle__label"><svg><use href="#crest"/></svg>Главный принцип LA FAMIGLIA</div>
+      <p>Каждая заявка должна быть заполнена полностью и достоверно. Чем точнее информация в MAGNET, тем проще команде работать с кандидатом на следующих этапах.</p>
+    </aside>
+  </section>
+</template>
+
+<script>
+(function () {
+  "use strict";
+
+  var SECTIONS = [
+    { slug: "terminology", num: "01", en: "TERMINOLOGY", ru: "Термины",
+      subtitle: "Базовые термины для работы команды.",
+      desc: "Двенадцать понятий, на которых держится работа: от лида до первого результата." },
+    { slug: "candidate-management", num: "02", en: "CANDIDATE MANAGEMENT", ru: "Работа с кандидатами",
+      subtitle: "Работа с кандидатами — основные правила.",
+      desc: "Где искать кандидатов, как вести диалог, напоминать о себе и сопровождать до результата." },
+    { slug: "communication", num: "03", en: "COMMUNICATION", ru: "Коммуникация",
+      subtitle: "Как общаться с кандидатами.",
+      desc: "Первое касание, презентация работы и переход к собеседованию." },
+    { slug: "objection-handling", num: "04", en: "OBJECTION HANDLING", ru: "Работа с возражениями",
+      subtitle: "Техники работы с возражениями.",
+      desc: "Пять шагов, чтобы услышать сомнение и честно на него ответить, с разбором примеров." },
+    { slug: "magnet-application", num: "05", en: "MAGNET APPLICATION", ru: "Создание заявки",
+      subtitle: "Как создать заявку.",
+      desc: "Как заполнить и отправить заявку в MAGNET | Скаут без ошибок." }
+  ];
+  var BRAND = "LA FAMIGLIA ACADEMY";
+  var view = document.getElementById("view");
+  var first = true;
+
+  function icon(id) { return '<svg aria-hidden="true"><use href="#' + id + '"/></svg>'; }
+  function href(s) { return "#/" + s.slug; }
+
+  function homeHTML() {
+    var cards = SECTIONS.map(function (s, i) {
+      return '<a class="card" href="' + href(s) + '" style="--i:' + i + '">' +
+        '<div class="card__num">' + s.num + '</div>' +
+        '<div class="card__en">' + s.en + '</div>' +
+        '<h3 class="card__ru">' + s.ru + '</h3>' +
+        '<p class="card__desc">' + s.desc + '</p>' +
+        '<div class="card__go"><span>Открыть раздел</span>' + icon("arrow") + '</div></a>';
+    }).join("");
+    return '<section class="hero wrap">' +
+      '<svg class="hero__crest" style="color:var(--gold)" aria-hidden="true"><use href="#crest"/></svg>' +
+      '<h1 class="hero__title" id="page-title">LA FAMIGLIA<span class="hero__academy">ACADEMY</span></h1>' +
+      '<div class="rule"><i></i></div>' +
+      '<p class="hero__subtitle">База знаний команды</p>' +
+      '<p class="hero__intro">Все необходимые знания для работы с кандидатами — от первого касания до первого результата.</p>' +
+      '</section>' +
+      '<section class="program wrap" aria-labelledby="program-title">' +
+      '<div class="program__head"><h2 id="program-title">Программа обучения</h2><span>Пять разделов · открывай в любом порядке</span></div>' +
+      '<div class="cards stagger">' + cards + '</div></section>';
+  }
+
+  function sectionHTML(index) {
+    var s = SECTIONS[index];
+    var prev = SECTIONS[index - 1];
+    var next = SECTIONS[index + 1];
+    var chapters = SECTIONS.map(function (c) {
+      return '<a href="' + href(c) + '" title="' + c.ru + '"' + (c === s ? ' aria-current="page"' : "") + '>' + Number(c.num) + '</a>';
+    }).join("");
+    var content = document.getElementById("tpl-" + s.slug).innerHTML;
+
+    var cont = next
+      ? '<a class="continue" href="' + href(next) + '"><div><div class="eyebrow">Продолжить обучение</div>' +
+        '<div class="continue__title">' + next.ru + '</div><div class="continue__meta">Глава ' + next.num + ' · ' + next.en + '</div></div>' +
+        '<span class="continue__arrow">' + icon("arrow") + '</span></a>'
+      : '<a class="continue" href="#/"><div><div class="eyebrow">Обучение пройдено</div>' +
+        '<div class="continue__title">Все пять разделов изучены</div><div class="continue__meta">Вернуться к программе обучения</div></div>' +
+        '<span class="continue__arrow">' + icon("arrow") + '</span></a>';
+
+    var pager = '<nav class="pager" aria-label="Соседние разделы">' +
+      (prev
+        ? '<a class="btn" href="' + href(prev) + '">' + icon("arrow-left") + '<span>' + prev.num + ' · ' + prev.ru + '</span></a>'
+        : '<a class="btn" href="#/">' + icon("arrow-left") + '<span>На главную</span></a>') +
+      (next
+        ? '<a class="btn btn--next" href="' + href(next) + '"><span>' + next.num + ' · ' + next.ru + '</span>' + icon("arrow") + '</a>'
+        : '<a class="btn btn--next" href="#/"><span>На главную</span>' + icon("arrow") + '</a>') +
+      '</nav>';
+
+    return '<section class="chapter wrap">' +
+      '<div class="chapter__top">' +
+        '<nav class="crumbs" aria-label="Навигация"><a href="#/">ACADEMY</a><span>/</span>' + s.en + '</nav>' +
+        '<nav class="chapters" aria-label="Разделы">' + chapters + '</nav>' +
+      '</div>' +
+      '<header class="chapter__head">' +
+        '<div class="chapter__ghost" aria-hidden="true">' + s.num + '</div>' +
+        '<div class="eyebrow">Раздел ' + s.num + ' · ' + s.en + '</div>' +
+        '<h1 class="chapter__title" id="page-title">' + s.ru + '</h1>' +
+        '<p class="chapter__subtitle">' + s.subtitle + '</p>' +
+        '<div class="rule rule--left"><i></i></div>' +
+        '<div class="chapter__actions"><a class="btn" href="#/">' + icon("arrow-left") + '<span>На главную</span></a></div>' +
+      '</header></section>' +
+      '<div class="wrap"><article class="paper">' + content + '</article>' +
+      '<div class="next-zone">' + cont + pager + '</div></div>';
+  }
+
+  function current() {
+    var slug = (location.hash || "").replace(/^#\/?/, "").replace(/\/$/, "");
+    for (var i = 0; i < SECTIONS.length; i++) if (SECTIONS[i].slug === slug) return i;
+    return -1;
+  }
+
+  function render() {
+    var i = current();
+    view.innerHTML = i < 0 ? homeHTML() : sectionHTML(i);
+    document.title = i < 0 ? BRAND : SECTIONS[i].ru + " — " + BRAND;
+    view.classList.remove("is-leaving");
+    view.classList.remove("is-entering");
+    void view.offsetWidth;
+    view.classList.add("is-entering");
+    window.scrollTo({ top: 0, behavior: "auto" });
+    if (!first) {
+      var title = document.getElementById("page-title");
+      if (title) { title.setAttribute("tabindex", "-1"); title.focus({ preventScroll: true }); }
+    }
+    first = false;
+  }
+
+  function onRoute() {
+    if (first) { render(); return; }
+    var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (reduce) { render(); return; }
+    view.classList.add("is-leaving");
+    setTimeout(render, 200);
+  }
+
+  function copyText(text) {
+    if (navigator.clipboard && window.isSecureContext) return navigator.clipboard.writeText(text);
+    return new Promise(function (resolve, reject) {
+      var area = document.createElement("textarea");
+      area.value = text;
+      area.setAttribute("readonly", "");
+      area.style.position = "fixed";
+      area.style.opacity = "0";
+      document.body.appendChild(area);
+      area.select();
+      try { document.execCommand("copy") ? resolve() : reject(); } catch (err) { reject(err); }
+      document.body.removeChild(area);
+    });
+  }
+
+  document.addEventListener("click", function (event) {
+    var button = event.target.closest("[data-copy]");
+    if (!button) return;
+    var source = document.getElementById(button.getAttribute("data-copy"));
+    var label = button.querySelector("span");
+    copyText(source.textContent).then(function () {
+      label.textContent = "Скопировано";
+    }, function () {
+      var range = document.createRange();
+      range.selectNodeContents(source);
+      var selection = window.getSelection();
+      selection.removeAllRanges();
+      selection.addRange(range);
+      label.textContent = "Выделено, скопируйте";
+    });
+    setTimeout(function () { label.textContent = "Скопировать"; }, 2200);
+  });
+
+  window.addEventListener("hashchange", onRoute);
+  onRoute();
+})();
+</script>
+</body>
+</html>
